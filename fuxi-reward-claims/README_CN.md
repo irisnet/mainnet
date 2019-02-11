@@ -43,7 +43,7 @@ keybase pgp sign -m "iaa1mmsm487rqkgktl2qgrjad0z3yaf9n8t5pkp33m"
 5. 提交签名信息
 
 你需要将以上返回内容保存早 [github-user-name]-[keybase fingerprint].txt, 
-例如,GitHub用户 [irisnetvalidator](https://github.com/irisnetvalidator) , 它的keybase id是 `6763B2C7947A9363`.
+例如,GitHub用户 [irisnetvalidator](https://github.com/irisnetvalidator) , 它的keybase fingerprint `6763B2C7947A9363`.
 因此，它的提交文件名应该是：'irisnetvalidator-6763B2C7947A9363.txt'.
 
 然后请以PR的方式提交你的`claim file`到`sig-files`文件夹下.
