@@ -29,7 +29,7 @@ You could use [keybase](http://keybase.io/) for registering your PGP ID. The ins
 3. Generate a new IRIShub address for receiving the rewards:
 
 - Install IRIShub v0.12.0: Follow this [doc](https://github.com/irisnet/irishub/blob/master/docs/get-started/Install-the-Software.md)
-and don't forget to compile it for `betanet`
+and don't forget to compile it for `betanet`.If you choose to download the binary, please choose the one for `mainnet`
 
 - Create new account: <https://www.irisnet.org/docs/cli-client/keys/add.html> or you could use an existing one. 
 This address is the delegator-address in the corresponding gentx file.
