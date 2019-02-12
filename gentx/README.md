@@ -44,6 +44,6 @@ Save your gentx file as [github-user-name]-[keybase fingerprint].json,
 For example,GitHub user [irisnetvalidator](https://github.com/irisnetvalidator), its keybase fingerprint is `6763B2C7947A9363`.
 Its submission should be 'irisnetvalidator-6763B2C7947A9363.json'.
 
-Submit your json file to `https://github.com/irisnet/betanet/gentx/betanet-gentx` by creating a pull request.
+Submit your json file to `https://github.com/irisnet/betanet/tree/master/gentx/betanet-gentx` by creating a pull request.
 
 After the team has verified all the gen-tx transactions, we will publish the final genesis file.
