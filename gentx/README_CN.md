@@ -47,7 +47,7 @@ commission相关参数也可根据需要进行修改。
 因此，它的提交文件名应该是：'irisnetvalidator-6763B2C7947A9363.json'.
 
 
-通过提交pull request将json文件提交到`https://github.com/irisnet/betanet/gentx/betanet-gentx` 目录下
+通过提交pull request将json文件提交到`https://github.com/irisnet/betanet/tree/master/gentx/betanet-gentx` 目录下
 
 在确认所有的gentx文件有效后，团队将公布最终的genesis文件
 
