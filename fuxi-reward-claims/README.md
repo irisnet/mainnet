@@ -48,7 +48,7 @@ You could also use in-browser signing from <https://keybase.io/sign> to do this
 5. Submit your signature
 
 Save your signature in a file  named as [github-user-name]-[keybase fingerprint].txt, 
-For example,GitHub user [irisnetvalidator](https://github.com/irisnetvalidator) , its keybase id is `6763B2C7947A9363`.
+For example,GitHub user [irisnetvalidator](https://github.com/irisnetvalidator) , its keybase fingerprint is `6763B2C7947A9363`.
 Its submission should be 'irisnetvalidator-6763B2C7947A9363.txt'.
 
 Then, submit your file as 'claim file' under `sig-files` folder by PR.
