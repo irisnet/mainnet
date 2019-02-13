@@ -1,0 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+iaa184499gxhcr8a0l80jwntry6faz7t4qs5knq0zv
+-----BEGIN PGP SIGNATURE-----
+Version: Keybase OpenPGP v2.0.80
+Comment: https://keybase.io/crypto
+
+wsBcBAABCgAGBQJcY76eAAoJEBlCLW7F9xihF7wH+gNwsUvH6CZbuSKZMFwQq2PD
+x93jQ9qwOjESMlqZUs4ZmtKCVqfokoxT1DwkxqKDFi8b0iHn7clPO2jW81pY6Ccv
+OuGIfTf6bUhf1UP69jp3TaEJY7BmuvVVhBBZIdUpdIqb41Lj5TRsvEb2Dky0it6i
+eTd3ZvU2lXcYBu95pSorgjMWR7DBm8zqyscsCDMlBOTAyTOm6XAUC+fhWXkn9xwd
+uFRjBmnUaq3ytH4OOrmcdLMNG5UGlYvOQXaw3FhvnW41QyBtyRQiv5tNSVgFVuGa
+1hhxyfMFhEP111LSf7YiOdgzZ6NSLAWRtPtHaCojfeCVSrWzadkkOb8Qmzk8eRM=
+=5vHu
+-----END PGP SIGNATURE-----
+
