@@ -37,6 +37,12 @@ The default commission data is:
 You could also change these metrics.
 
 > Please note the amount is what you want to self-delegate, this amount could not be bigger than your balance in genesis file
+
+* For those of you who have received testnet reward, please make your self bond amount less or equal to your reward amount (reward points * 100) when creating your gentx file.
+* For those who don’t have testnet rewards, but have other sources of iris tokens either as private sale participants or community collaborators, please make your self bond amount equal to 100 when creating your gentx file.
+* We’ll distribute testnet reward balance (if not fully self-bonded) immediately after betanet launch; we’ll also distribute private sale tokens based on associated terms and conditions.
+
+
 > IP is your sentry node's public IP
 
 ## Step 4: Sumbit your gentx.json
