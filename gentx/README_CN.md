@@ -47,6 +47,11 @@ commission相关参数也可根据需要进行修改。
 
 生成的gentx.json文件存放在目录下：{path_to_your_home}/config/gentx
 
+> 请及时备份一下文件：`node_key.json` & `private_key.json`
+
+> 启动哨兵节点时，请把生成gentx操作时用到的的node_key.json替代原有{IRISHOME}/config目录下的node_key.json。这样别人就可以通过26656获得正确的node-id
+
+
 ## Step 4: 提交gentx文件
 
 将上述提到的json文件保存为[github-user-name]-[keybase fingerprint].json

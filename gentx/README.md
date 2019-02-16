@@ -45,6 +45,13 @@ You could also change these metrics.
 
 > IP is your sentry node's public IP
 
+> Note: Please keep a backup of `node_key.json`&`private_key.json` 
+
+> Notes on booting your sentry node: please make sure you have replaced the `node_key.json` in your sentry's {irishom}/config with the one that you used for gentx operation
+
+
+
+
 ## Step 4: Sumbit your gentx.json
 Save your gentx file as [github-user-name]-[keybase fingerprint].json, 
 For example,GitHub user [irisnetvalidator](https://github.com/irisnetvalidator), its keybase fingerprint is `6763B2C7947A9363`.
