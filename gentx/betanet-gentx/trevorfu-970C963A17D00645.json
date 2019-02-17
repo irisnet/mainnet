@@ -1,0 +1,50 @@
+{
+  "type": "irishub/bank/StdTx",
+  "value": {
+    "msg": [
+      {
+        "type": "irishub/stake/MsgCreateValidator",
+        "value": {
+          "Description": {
+            "moniker": "afu",
+            "identity": "",
+            "website": "",
+            "details": ""
+          },
+          "Commission": {
+            "rate": "0.1000000000",
+            "max_rate": "0.2000000000",
+            "max_change_rate": "0.0500000000"
+          },
+          "delegator_address": "iaa1e2jjr7pfjm7lrkuh7tamecgf6jgsxntz6hcyc8",
+          "validator_address": "iva1e2jjr7pfjm7lrkuh7tamecgf6jgsxntz0xjt9q",
+          "pubkey": {
+            "type": "tendermint/PubKeyEd25519",
+            "value": "o2ymoWJlkA/GvmMWFQYVng2qB2lDdZEZcwjJmxeRwQQ="
+          },
+          "delegation": {
+            "denom": "iris-atto",
+            "amount": "400000000000000000000000"
+          }
+        }
+      }
+    ],
+    "fee": {
+      "amount": null,
+      "gas": "20000"
+    },
+    "signatures": [
+      {
+        "pub_key": {
+          "type": "tendermint/PubKeySecp256k1",
+          "value": "A676Wwbd8e/qhKFetnFJiuSp0sio4TP2Cpx/4qe+eTNs"
+        },
+        "signature": "8x/Nk7J/LTPSY2GeIkHiMGAVltb5vdTWPmQS5p7rGzk12blpRD6xher3mqG6AmSS4Zx4AS63rB4dNAjAJCqDmg==",
+        "account_number": "0",
+        "sequence": "0"
+      }
+    ],
+    "memo": "db9086516bb2f0e992944b1ba38daa9148a65de4@47.244.28.51:26656"
+  }
+}
+
