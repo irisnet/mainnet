@@ -1,0 +1,45 @@
+{
+  "type": "irishub/bank/StdTx",
+  "value": {
+    "msg": [{
+      "type": "irishub/stake/MsgCreateValidator",
+      "value": {
+        "Description": {
+          "moniker": "Sentinel-Validator",
+          "identity": "",
+          "website": "",
+          "details": ""
+        },
+        "Commission": {
+          "rate": "0.1000000000",
+          "max_rate": "0.2000000000",
+          "max_change_rate": "0.0100000000"
+        },
+        "delegator_address": "iaa1schh494g0n9l8x3hax7d7qwcehv54euw0fwyfm",
+        "validator_address": "iva1schh494g0n9l8x3hax7d7qwcehv54euw6cyt5u",
+        "pubkey": {
+          "type": "tendermint/PubKeyEd25519",
+          "value": "SGh1hBAnkdUTH865eDeNCuflIKF7XujvmE1lA9aJ8c0="
+        },
+        "delegation": {
+          "denom": "iris-atto",
+          "amount": "90000000000000000000000"
+        }
+      }
+    }],
+    "fee": {
+      "amount": null,
+      "gas": "20000"
+    },
+    "signatures": [{
+      "pub_key": {
+        "type": "tendermint/PubKeySecp256k1",
+        "value": "A00Vkf5n3v/HAfEV8f8wIqUSg+x068IYFrXPC6yDTUQA"
+      },
+      "signature": "nG81t/q0hQL2lm5qNcgNsnHL4wLgbbr+vvFeMBRVyk99uJUXEspD40pw65SSqRo8cAhjB56RaWZGAfAs9zellw==",
+      "account_number": "0",
+      "sequence": "0"
+    }],
+    "memo": "1868c30343bedfd7d7bc64e07540004e41c5485e@13.234.48.42:26656"
+  }
+}
