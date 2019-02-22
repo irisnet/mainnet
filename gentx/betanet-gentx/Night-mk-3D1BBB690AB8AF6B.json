@@ -6,7 +6,7 @@
         "type": "irishub/stake/MsgCreateValidator",
         "value": {
           "Description": {
-            "moniker": "node-hbr",
+            "moniker": "huobi_validator",
             "identity": "",
             "website": "",
             "details": ""
@@ -17,14 +17,14 @@
             "max_change_rate": "0.0100000000"
           },
           "delegator_address": "iaa19wztuq7klrj2hgl4cqyvfajc6qnf24adtux2kz",
-          "validator_address": "iva10sggemc7tugzrkt2ne5az8uxkm70p0fex9l9ue",
+          "validator_address": "iva19wztuq7klrj2hgl4cqyvfajc6qnf24ad7dv9t9",
           "pubkey": {
             "type": "tendermint/PubKeyEd25519",
-            "value": "A65399TfZCao8Cnf0TRv9wY6QSHI0FBXcLXuXKZhBOI="
+            "value": "BeRuv2I9VLXHfDuc7jOKOx9waJB8jWU9zmUvJesxz+U="
           },
           "delegation": {
             "denom": "iris-atto",
-            "amount": "99000000000000000000"
+            "amount": "100000000000000000000"
           }
         }
       }
@@ -34,13 +34,13 @@
       {
         "pub_key": {
           "type": "tendermint/PubKeySecp256k1",
-          "value": "A38QX2mAg/tTEYqG/peEgsumIbehooRRmzCE0uVteRb4"
+          "value": "A6EEcM39HA+PVJGIJPDe7w4NCs8P7lcAZqMO8A7/xGwz"
         },
-        "signature": "h2d7p1fvB9ULf/63JFYCx9hyy/b3A5tWsSoX8rKZt5hEG4mQ/2+9QBhRE+77dH9es+DDcv49qllqvbRifgmyyw==",
+        "signature": "OvZk2aDM/qnFnnUvTPQ3zZDSbFkKnqO+fNA3L3LlpJZzZinO85UqJIvqJaHHXOzvSUu7c13FwRHjqDnY1kVEDw==",
         "account_number": "0",
         "sequence": "0"
       }
     ],
-    "memo": "491c092ad0e2167504079828482812a62847aaf6@ts-1.irisnet.org:26656"
+    "memo": "bc518bfb1db6731ca5c20b37c432f6961b35609c@144.202.126.51:26656"
   }
 }
