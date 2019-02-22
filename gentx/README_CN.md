@@ -59,6 +59,7 @@ commission相关参数也可根据需要进行修改。
 例如,GitHub用户 [irisnetvalidator](https://github.com/irisnetvalidator),它的keybase fingerprint是 `6763B2C7947A9363`.
 因此，它的提交文件名应该是：'irisnetvalidator-6763B2C7947A9363.json'.
 
+如何生成keybase fingerprint：https://github.com/irisnet/testnets/blob/master/fuxi/如何使用keybase.md
 
 通过提交pull request将json文件提交到`https://github.com/irisnet/betanet/tree/master/gentx/betanet-gentx` 目录下
 

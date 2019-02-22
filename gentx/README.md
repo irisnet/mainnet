@@ -56,6 +56,7 @@ You could also change these metrics.
 Save your gentx file as [github-user-name]-[keybase fingerprint].json, 
 For example,GitHub user [irisnetvalidator](https://github.com/irisnetvalidator), its keybase fingerprint is `6763B2C7947A9363`.
 Its submission should be 'irisnetvalidator-6763B2C7947A9363.json'.
+How. to use keybase: https://github.com/irisnet/testnets/blob/master/fuxi/How%20to%20use%20keybase.md
 
 Submit your json file to `https://github.com/irisnet/betanet/tree/master/gentx/betanet-gentx` by creating a pull request.
 
