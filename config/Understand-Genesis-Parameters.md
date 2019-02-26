@@ -13,7 +13,7 @@ Genesis files are the basis for the blockchain network initialization, which is 
  "chain_id":"irishub",
 ```
 
-- **genesis_time** : Time to start the b lockchain
+- **genesis_time** : Time to start the blockchain
 - **chain_id** Blockchain’s ID
 
 ## Consensus Parameters
