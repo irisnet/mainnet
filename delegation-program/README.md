@@ -9,13 +9,12 @@ IRIS Foundation decides to delegate some amount of IRIS to qualified validators.
 * Contribution to the growth of IRISnet: IRIS foundation will encourage community members who contribute to the development of tooling for validators, explorer, wallet, etc.
 
 ## How to apply for the delegation from IRIS foundation?
-1. Submit your request in this GitHub Page, your request file should include: 
-* Company or full name
-* Validator operator address
-* How much IRIS do you currently hold?
-* How much IRIS do you currently self-delegate?
-* How much delegation do you currently hold?
-* Your achievement in Fuxi testnet or other PoS projects, if any
-* Information about your infrastructure 
-* Previous experience with validating other poS projects, if any
+ Submit your request in this GitHub Page, your request file should include: 
+1. Company or full name
+2. Validator operator address
+3. How much IRIS do you currently self-bond?
+4. How much delegation do you currently hold?
+5. Your achievement in Fuxi testnet or other PoS projects, if any
+6. Information about your infrastructure 
+7.  Previous experience with validating other poS projects, if any
 
