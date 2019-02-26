@@ -10,6 +10,11 @@ IRIS Foundation decides to delegate some amount of IRIS to qualified validators.
 
 ## How to apply for the delegation from IRIS foundation?
 1. Submit your request in this GitHub Page, your request file should include: 
+* Company or full name
+* Validator operator address
+* How much IRIS do you currently hold?
+* How much delegation do you currently hold?
 * Your achievement in Fuxi testnet or other PoS projects, if any
 * Information about your infrastructure 
 * Previous experience with validating other poS projects, if any
+
