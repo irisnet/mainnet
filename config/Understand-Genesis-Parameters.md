@@ -54,7 +54,8 @@ Auth is a module for transaction authentification. In genesis file, the paramete
             }
         },
 ```
-
+* gas_price_threshold：minimum of gas price	
+* tx_size：the limit of the normal txsize	
 
 
 ### Stake Module
