@@ -77,8 +77,7 @@ Auth is a module for transaction authentification. In genesis file, the paramete
             "exported":false
         },
 ```
-- **pool**: The count of bonded iris tokens
-- **unbonding_time**：3 weeks
+- **unbonding_time**：Time to wait for unbond some tokens is c3 weeks
 - **max_validators**: the count of validators cannot be more than 100.
 
 ### Mint Module
@@ -94,9 +93,10 @@ Auth is a module for transaction authentification. In genesis file, the paramete
         }
 }
 ```
-80,000,000 IRIS, which is 4% In the first year,  annual inflation rate for IRIShub will be 4%. The total amount of iris token minted from inflation will be :
+- inflation： 4% in the first year
+- inflation_basement：2 billion in the first year
 
-2 billion * 4% = 80 million
+whihch means total amount of inflated iris is: 2 billion * 4% = 80 million
 
 ### Distribution Module 
 
@@ -122,7 +122,7 @@ Auth is a module for transaction authentification. In genesis file, the paramete
         },
 ```
 
-Dostribution module is in charge of distributing collected transaction fee and inflated token to all validators and delegators. 
+Distribution module is in charge of distributing collected transaction fee and inflated token to all validators and delegators. 
 
 * **Community Tax**: The ratio of community tax is set to be 2%. For example, if a total of 1000 IRIS  to be distributed among all staking pools, then 1000*2% = 20IRIS will go to community pool. Tokens in community pool will be used for eco system development. 
 * **Proposer Rewards**: Proposer rewards is used for incentivizing validators to propose new blocks. If one validator is the proposer of latest block, that validator's staking pool receives between 1% and 5% of the sum of fee rewards and inflated token as proposer reward. It is calculated as:
