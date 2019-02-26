@@ -13,6 +13,7 @@ IRIS Foundation decides to delegate some amount of IRIS to qualified validators.
 * Company or full name
 * Validator operator address
 * How much IRIS do you currently hold?
+* How much IRIS do you currently self-delegate?
 * How much delegation do you currently hold?
 * Your achievement in Fuxi testnet or other PoS projects, if any
 * Information about your infrastructure 
