@@ -192,8 +192,17 @@ Auth模块用于校验交易的有效性
 
 * **Normal**：`TxTaxUsage`
 
+Governance模块中包含了如下参数：
+* `MinDeposit`: 最小抵押金额
+* `MaxDepositPeriod`: 抵押阶段的窗口期
+* `VotingPeriod`: 投票阶段的窗口期
+* `MaxProposal`: 该类型提议在网络中同时能存在的最大个数
+* `Penalty`:如果一个账户提议进入投票阶段，他是验证人，然后该提议进入统计阶段，他还是验证人，但是他并没有投票，则会按Penalty的比例被惩罚。
+* `Veto`: NoWithVeto强烈不同意投票的比例若超过了，该提案无法通过
+* `Threshold`: 提案通过的要求的Yes占总投票的比例
+* `Participation`: 参与投票的voting power占总共voting power的比例
 
-不同级别对应的参数不同：
+不同类型的提案使用不同的参数：
 
 | Parameters | Critical  | Important | Normal    |
 | ---------- | --------- | --------- | --------- |
