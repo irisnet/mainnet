@@ -187,6 +187,16 @@ We category different governance proposals in three categories:
 
 * **Normal**：`TxTaxUsage`
 
+* Parameters in Governance module are the following:
+ * MinDeposit: The minimum of deposit
+ * MaxDeposit Period: Window period for deposit
+ * Voting Period: Window period for voting
+ * MaxProposal: The maximum number of proposal that can exist at the same time
+ * Penalty: The proportion of the slash
+ * Veto: The ratio that is defined by the govTallyingProcedure/Veto
+ * Threshold: The ratio that is defined by the govTallyingProcedure/Threshold
+ * Participation: The ratio that is defined by the govTallyingProcedure/Participation
+
 
 Different parameters are set for different type of governance proposal. 
 
