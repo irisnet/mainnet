@@ -1,9 +1,8 @@
-# How to understand system parameters in Genesis file
+# Understand Genesis Parameters of IRIS Network
 
 ## What is Genesis file?
 
-Genesis files are the basis for the blockchain network initialization, which is the genesis block  for any new IRIS network. The genesis file sets the initial account balances and parameters for each module: such as chain-id, consensus parameters, validator information. Establishing a robust social consensus over the genesis file is critical to starting a network.
-
+A Genesis file is the basis for blockchain network initialization, it is used by IRIS Network to create its first (genesis) block.  The genesis file sets the initial account balances and parameters for each module, such as chain-id, consensus parameters, validator information, and etc.  Establishing a robust social consensus through the Genesis file is crucial to starting a network.
 
 
 ## Basic Parameters
@@ -12,9 +11,8 @@ Genesis files are the basis for the blockchain network initialization, which is 
  "genesis_time":"2019-03-1T06:54:00.867967765Z",
  "chain_id":"irishub",
 ```
-
-- **genesis_time** : Time to start the blockchain
-- **chain_id** Blockchain’s ID
+- **genesis_time** : Time after which the blockchain can be started
+- **chain_id** : Network ID
 
 ## Consensus Parameters
 ```
@@ -33,15 +31,18 @@ Genesis files are the basis for the blockchain network initialization, which is 
         }
     }
 ```
+These are consensus level parameters used by Tendermint.
 
 - **block_size**
-  - `max_bytes` The max size of a block in bytes
-  - `max_gas` The maximum Gas quantity of a block. Its default value is -1 which means no gas limit. If the accumulation of comsumed gas exceeds the block gas limit, the transaction and all subsequent transactions in the same block will fail to deliver.
-- **evidence** The lifecycle of deception evidence in the block
+  - `max_bytes` Maximum size of a block: *2,000,000 bytes*
+  - `max_gas` Maximum gas allowd for a block: *-1 (no limit)*
+- **evidence**
+  - `max_age` Maximum age (of any reported wrong-doing) beyond which no punishments will be carried out: *100,000 blocks*
+
 
 ## App State
 ### Auth Module
-Auth is a module for transaction authentification. In genesis file, the parameters related are the following: 
+Auth is a module for transaction authentication.
 ```
  "auth":{
             "collected_fee":null,
@@ -54,9 +55,8 @@ Auth is a module for transaction authentification. In genesis file, the paramete
             }
         },
 ```
-* gas_price_threshold：minimum of gas price	
-* tx_size：the limit of the normal txsize	
-
+- `gas_price_threshold` Minimum gas price: *6000 iris-nano*
+- `tx_size` Transaction size limit: *1000 bytes*
 
 ### Stake Module
 ```
@@ -77,8 +77,8 @@ Auth is a module for transaction authentification. In genesis file, the paramete
             "exported":false
         },
 ```
-- **unbonding_time**：Time to wait for unbond some tokens is c3 weeks
-- **max_validators**: the count of validators cannot be more than 100.
+- `unbonding_time` Wait time for undelegation: *3 weeks*
+- `max_validators`: Maximum number of validators allowed: *100*
 
 ### Mint Module
 ```
@@ -93,13 +93,10 @@ Auth is a module for transaction authentification. In genesis file, the paramete
         }
 }
 ```
-- inflation： 4% in the first year
-- inflation_basement：2 billion in the first year
+- `inflation` inflation rate: *4%*
+- `inflation_basement` base number for inflation: *2 billion IRIS*
 
-whihch means total amount of inflated iris is: 2 billion * 4% = 80 million
-
-### Distribution Module 
-
+### Distribution Module
 ```
 "distr":{
             "params":{
@@ -122,15 +119,16 @@ whihch means total amount of inflated iris is: 2 billion * 4% = 80 million
         },
 ```
 
-Distribution module is in charge of distributing collected transaction fee and inflated token to all validators and delegators. 
+Distribution module is in charge of distributing collected transaction fee and inflated token to all validators and delegators.
 
-* **Community Tax**: The ratio of community tax is set to be 2%. For example, if a total of 1000 IRIS  to be distributed among all staking pools, then 1000*2% = 20IRIS will go to community pool. Tokens in community pool will be used for eco system development. 
-* **Proposer Rewards**: Proposer rewards is used for incentivizing validators to propose new blocks. If one validator is the proposer of latest block, that validator's staking pool receives between 1% and 5% of the sum of fee rewards and inflated token as proposer reward. It is calculated as:
+* **Community Tax**: The ratio of community tax is set to *2%*. For example, if a total of 1000 IRIS were to be distributed among all staking pools, then 20 IRIS would go to the community pool. The usage of tokens in the community pool will be determined through on-chain governance.
+* **Proposer Reward**: Proposer rewards is used for incentivizing validators to propose new blocks. If a validator is the proposer of the latest block, that validator's staking pool receives between 1% and 5% of the sum of fee rewards and inflated token as proposer reward. It is calculated as:
 
 ```
-proposerReward = (TxFee + InflatedToken) * (0.01 + 0.04 * sumPowerPrecommitValidators / totalBondedTokens)
+ProposerReward = (TxFee + InflatedToken) *
+(0.01 + 0.04 * PrecommitValidatorsVotingPower / TotalVotingPower)
 ```
-proposerReward will be share among validator and delegators proportionally.
+Proposer reward will be shared proportionally among the proposer and its delegators.
 
 ### Governance Module
 ```
@@ -179,12 +177,9 @@ proposerReward will be share among validator and delegators proportionally.
             }
         }
 ```
-
-We category different governance proposals in three categories:
+We put governance proposals into three categories:
 * **Critical**：`SoftwareUpgrade`, `SystemHalt`
-
 * **Important**：`ParameterChange`, `NewCoinType`
-
 * **Normal**：`TxTaxUsage`
 
 Parameters in Governance module are the following:
@@ -197,22 +192,21 @@ Parameters in Governance module are the following:
  * `Threshold`: The ratio that is defined by the govTallyingProcedure/Threshold
  * `Participation`: The ratio that is defined by the govTallyingProcedure/Participation
 
+The following parameters are set for each category of proposals.
 
-Different parameters are set for different type of governance proposal. 
-
-| Parameters | Critical  | Important | Normal    |
+| Parameter | Critical  | Important | Normal    |
 | ---------- | --------- | --------- | --------- |
-| MinDeposit | 4000 iris | 2000 iris | 1000 iris |
-|MaxDepositPeriod|1 Day|1 Day|1 Day|
-|VotingPeriod|5 Days|5 Days|5 Days|
-|MaxProposal|1|5|2|
-|Participation|7/8|5/6|3/4|
-|Threshold|6/7|4/5|2/3|
-|Veto|1/3|1/3|1/3|
-|Punishment for non-voting|0|0|0|
+|`deposit_period`|1 day|1 day|1 day|
+|`min_deposit`| 4000 iris | 2000 iris | 1000 iris |
+|`voting_period`|5 days|5 days|5 days|
+|`max_num`|1|5|2|
+|`threshold`|6/7|4/5|2/3|
+|`veto`|1/3|1/3|1/3|
+|`participation`|7/8|5/6|3/4|
+|`penalty`|0|0|0|
+
 
 ### Upgrade
-
 ```
 "upgrade":{
             "GenesisVersion":{
@@ -241,14 +235,12 @@ In `GenesisVersion` field, you could see the Upgrade information for genesis ver
 These parameters will be changed according after upgrade proposals are passed. 
 
 
-
-### Slashing 
-
+### Slashing
 ```
 "slashing":{
             "params":{
-                "max_evidence_age":"50000",
-                "signed_blocks_window":"30000",
+                "max_evidence_age":"51840",
+                "signed_blocks_window":"34560",
                 "min_signed_per_window":"0.5000000000",
                 "double_sign_jail_duration":"172800000000000",
                 "downtime_jail_duration":"86400000000000",
@@ -269,12 +261,11 @@ These parameters will be changed according after upgrade proposals are passed.
 
 There are three slashing conditions:
 
-* Downtime: The window for measuring downtime slash is 30,000, which means if a validator missed 15,000 blocks, he will be jailed for 1 day. Currently, no bonded tokens will be slashed.
-* Double Sign: If a validator signed different blocks at the same height, same round, he will be jailed for 2 days.
-* Censorship:If a validator propose a block with invalid transactions, he will be jailed for 2 days.
+- **Downtime**: The window for measuring downtime slash is 34,560 blocks, which means if a validator missed 17,280 blocks, he will be jailed for 1 day; currently, no bonded tokens will be slashed.
+- **Double Sign**: If a validator signed different blocks at the same height/same round, he will be jailed for 2 days; and 1% of staked tokens will be slashed.
+- **Censorship**: If a validator proposed a block with invalid transactions, he will be jailed for 2 days; currently, no bonded tokens will be slashed.
 
 ### Service
-
 ```
 "service":{
             "params":{
@@ -289,10 +280,10 @@ There are three slashing conditions:
         },
 ```
 
-* max_request_timeout: The largest delay for a service request
-* min_deposit_multiple: In the service binding, need a deposit amount of the binding, the smallest deposit amount is MinDepositMultiple times the service fee
-* service_fee_tax: The ratio of service fee tax is set to be 1%. For example, if a total of 1000 IRIS  to be received as service fee, then 1000*1% = 10IRIS will go to community pool. Tokens in community pool will be used for eco system development. 
-* slash_fraction: if a service provider failed to respond to request within `max_request_timeout`, 1% of its deposit will be slashed.
-* complaint_retrospect: If a user has question about the service results, he has 15 days to file for a arbitration.
-* arbitration_time_limit: The arbitrator of IRIShub will hve 5 days to resolve it
-* tx_size_limit: Service transaction size need to be less than 4000 bytes
+- `max_request_timeout` Maximum timeout allowed for a service request: *100 blocks*
+- `min_deposit_multiple` Service provider must put down a deposit for service binding, which cannot be less than *100 times ServiceFee*
+- `service_fee_tax` Service fee tax ratio is set to *1%*. For example, if a total of 1000 IRIS were to be received as service fee, then 10 IRIS will go to the service tax pool.  Service tax will be used for IRISnet ecosystem development
+- `slash_fraction` Service provider will have *0.1%* of its deposit slashed it it fails to respond to a service request within `max_request_timeout`
+- `tx_size_limit` Size limit for transactions in the service module: *4000 bytes*
+- `complaint_retrospect` (not implemented yet)
+- `arbitration_time_limit` (not implemented yet)
