@@ -182,6 +182,16 @@ We put governance proposals into three categories:
 * **Important**：`ParameterChange`, `NewCoinType`
 * **Normal**：`TxTaxUsage`
 
+Parameters in Governance module are the following:
+ * `MinDeposit`: The minimum of deposit
+ * `MaxDeposit Period`: Window period for deposit
+ * `Voting Period`: Window period for voting
+ * `MaxProposal`: The maximum number of proposal that can exist at the same time
+ * `Penalty`: The proportion of the slash
+ * `Veto`: The ratio that is defined by the govTallyingProcedure/Veto
+ * `Threshold`: The ratio that is defined by the govTallyingProcedure/Threshold
+ * `Participation`: The ratio that is defined by the govTallyingProcedure/Participation
+
 The following parameters are set for each category of proposals.
 
 | Parameter | Critical  | Important | Normal    |
@@ -194,14 +204,7 @@ The following parameters are set for each category of proposals.
 |`veto`|1/3|1/3|1/3|
 |`participation`|7/8|5/6|3/4|
 |`penalty`|0|0|0|
-- `deposit_period`
-- `min_deposit`
-- `voting_period`
-- `max_num`
-- `threshold`
-- `veto`
-- `participation`
-- `penalty`
+
 
 ### Upgrade
 ```
@@ -220,12 +223,17 @@ The following parameters are set for each category of proposals.
             }
         },
 ```
-These parameters are managed and updated by the `SoftwareUpgrade` governance proposals and the on-chain upgrade process.
-- `ProposalID`
-- `version`
-- `software`
-- `height`
-- `threshold`
+In `GenesisVersion` field, you could see the Upgrade information for genesis version of IRIS hub. 
+* `ProposalID`: It is 0, which means it's not from an upgrade proposal
+* `Protocol`: This field explains the detailed information about the underlying protocol. 
+   * `version`: It indicates the version of protcol, which starts with 0 and will increase by one
+   * `software`: It indicates the url for software's relese page
+   * `height`:  It indicates the height which this protocol will take effect, the default value is 1 for genesisversion
+   * `threshold`: It indicates the threshold of Yes votes for passing an upgrade proposal, it's 90% for IRIS hub.
+   * `Success`: It indicates if the corresponding upgrade proposal is successful or not. At genesis, it's set to be true
+
+These parameters will be changed according after upgrade proposals are passed. 
+
 
 ### Slashing
 ```

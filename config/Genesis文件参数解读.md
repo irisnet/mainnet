@@ -192,8 +192,17 @@ Auth模块用于校验交易的有效性
 
 * **Normal**：`TxTaxUsage`
 
+Governance模块中包含了如下参数：
+* `MinDeposit`: 最小抵押金额
+* `MaxDepositPeriod`: 抵押阶段的窗口期
+* `VotingPeriod`: 投票阶段的窗口期
+* `MaxProposal`: 该类型提议在网络中同时能存在的最大个数
+* `Penalty`:如果一个账户提议进入投票阶段，他是验证人，然后该提议进入统计阶段，他还是验证人，但是他并没有投票，则会按Penalty的比例被惩罚。
+* `Veto`: NoWithVeto强烈不同意投票的比例若超过了，该提案无法通过
+* `Threshold`: 提案通过的要求的Yes占总投票的比例
+* `Participation`: 参与投票的voting power占总共voting power的比例
 
-不同级别对应的参数不同：
+不同类型的提案使用不同的参数：
 
 | Parameters | Critical  | Important | Normal    |
 | ---------- | --------- | --------- | --------- |
@@ -225,7 +234,20 @@ Auth模块用于校验交易的有效性
         },
 ```
 
-Upgrade模块支持区块链软件平滑升级的基础设施，通过UpgradeProposal在约定高度切换到新版的代码，并对历史版本的链上数据完全兼容。在一个全新的网络中，与upgrade模块有关的参数都是0。
+Upgrade模块支持区块链软件平滑升级的基础设施，通过UpgradeProposal在约定高度切换到新版的代码，并对历史版本的链上数据完全兼容。
+
+`GenesisVersion`字段表示了IRIS hub的Upgrade模块初始信息。 
+
+* `ProposalID`: 默认值为0,表示没有升级提案记录 
+* `Protocol`: 该字段包含区块链协议的详细信息
+* `version`: 表示Protocol的版本信息，从0开始递增
+* `software`: 表示使用软件的发布页面超链接
+* `height`: 表示该protocol从哪个高度开始生效，Genesisversion会在第一个高度就生效
+* `threshold`: 表示通过升级提案至少要获得多少比例的Yes，目前默认为90%
+* `Success`: 表示升级是否成功，在genesisversion中默认为true
+
+
+这些参数在区块链网络启动中，会根据实际的升级提案执行情况修改。
 
 
 
