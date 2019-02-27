@@ -234,8 +234,8 @@ In `GenesisVersion` field, you could see the Upgrade information for genesis ver
 * `Protocol`: This field explains the detailed information about the underlying protocol. 
    * `version`: It indicates the version of protcol, which starts with 0 and will increase by one
    * `software`: It indicates the url for software's relese page
-   * `height`:  It indicates the height which this protocol will take effect
-   * `threshold`: It indicates the threshold for passing an upgrade proposal, it's 90% for IRIS hub.
+   * `height`:  It indicates the height which this protocol will take effect, the default value is 1 for genesisversion
+   * `threshold`: It indicates the threshold of Yes votes for passing an upgrade proposal, it's 90% for IRIS hub.
    * `Success`: It indicates if the corresponding upgrade proposal is successful or not. At genesis, it's set to be true
 
 These parameters will be changed according after upgrade proposals are passed. 
