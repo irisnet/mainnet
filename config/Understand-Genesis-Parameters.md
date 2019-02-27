@@ -187,15 +187,15 @@ We category different governance proposals in three categories:
 
 * **Normal**：`TxTaxUsage`
 
-* Parameters in Governance module are the following:
- * MinDeposit: The minimum of deposit
- * MaxDeposit Period: Window period for deposit
- * Voting Period: Window period for voting
- * MaxProposal: The maximum number of proposal that can exist at the same time
- * Penalty: The proportion of the slash
- * Veto: The ratio that is defined by the govTallyingProcedure/Veto
- * Threshold: The ratio that is defined by the govTallyingProcedure/Threshold
- * Participation: The ratio that is defined by the govTallyingProcedure/Participation
+Parameters in Governance module are the following:
+ * `MinDeposit`: The minimum of deposit
+ * `MaxDeposit Period`: Window period for deposit
+ * `Voting Period`: Window period for voting
+ * `MaxProposal`: The maximum number of proposal that can exist at the same time
+ * `Penalty`: The proportion of the slash
+ * `Veto`: The ratio that is defined by the govTallyingProcedure/Veto
+ * `Threshold`: The ratio that is defined by the govTallyingProcedure/Threshold
+ * `Participation`: The ratio that is defined by the govTallyingProcedure/Participation
 
 
 Different parameters are set for different type of governance proposal. 
@@ -229,8 +229,16 @@ Different parameters are set for different type of governance proposal.
             }
         },
 ```
+In `GenesisVersion` field, you could see the Upgrade information for genesis version of IRIS hub. 
+* `ProposalID`: It is 0, which means it's not from an upgrade proposal
+* `Protocol`: This field explains the detailed information about the underlying protocol. 
+   * `version`: It indicates the version of protcol, which starts with 0 and will increase by one
+   * `software`: It indicates the url for software's relese page
+   * `height`:  It indicates the height which this protocol will take effect
+   * `threshold`: It indicates the threshold for passing an upgrade proposal, it's 90% for IRIS hub.
+   * `Success`: It indicates if the corresponding upgrade proposal is successful or not. At genesis, it's set to be true
 
-By default, all the parameters about uppgrade info will be 0. These parameters will be changed according after upgrade proposals are passed. 
+These parameters will be changed according after upgrade proposals are passed. 
 
 
 
