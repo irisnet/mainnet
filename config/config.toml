@@ -42,7 +42,7 @@ priv_validator_file = "config/priv_validator.json"
 
 # TCP or UNIX socket address for Tendermint to listen on for
 # connections from an external PrivValidator process
-priv_validator_laddr = ""
+priv_validator_laddr = "localhost:26690"
 
 # Path to the JSON file containing the private key to use for node authentication in the p2p protocol
 node_key_file = "config/node_key.json"
@@ -160,7 +160,7 @@ seed_mode = false
 private_peer_ids = ""
 
 # Toggle to disable guard against peers connecting from the same ip.
-allow_duplicate_ip = true
+allow_duplicate_ip = false
 
 # Peer connection configuration.
 handshake_timeout = "20s"
@@ -223,7 +223,7 @@ indexer = "kv"
 # It's recommended to index only a subset of tags due to possible memory
 # bloat. This is, of course, depends on the indexer's DB and the volume of
 # transactions.
-index_tags = ""
+index_tags = "action,tx.height"
 
 # When set to true, tells indexer to index all tags (predefined tags:
 # "tx.hash", "tx.height" and all tags from DeliverTx responses).
@@ -231,7 +231,7 @@ index_tags = ""
 # Note this may be not desirable (see the comment above). IndexTags has a
 # precedence over IndexAllTags (i.e. when given both, IndexTags will be
 # indexed).
-index_all_tags = true
+index_all_tags = false
 
 ##### instrumentation configuration options #####
 [instrumentation]
@@ -239,7 +239,7 @@ index_all_tags = true
 # When true, Prometheus metrics are served under /metrics on
 # PrometheusListenAddr.
 # Check out the documentation for the list of available metrics.
-prometheus = false
+prometheus = true
 
 # Address to listen for Prometheus collector(s) connections
 prometheus_listen_addr = ":26660"
