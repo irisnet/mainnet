@@ -1,0 +1,49 @@
+{
+  "type": "irishub/bank/StdTx",
+  "value": {
+    "msg": [
+      {
+        "type": "irishub/stake/MsgCreateValidator",
+        "value": {
+          "Description": {
+            "moniker": "Cryptium Labs",
+            "identity": "",
+            "website": "",
+            "details": ""
+          },
+          "Commission": {
+            "rate": "0.2000000000",
+            "max_rate": "1.0000000000",
+            "max_change_rate": "1.0000000000"
+          },
+          "delegator_address": "iaa1f3lapzxe7ugfex8358ufp5k8xg2yym5t5sqf07",
+          "validator_address": "iva1f3lapzxe7ugfex8358ufp5k8xg2yym5tpp2xje",
+          "pubkey": {
+            "type": "tendermint/PubKeyEd25519",
+            "value": "IaRhTY+FH7k3kDEqguZVNqL3o/S+FYnD9fjCMNBw/1w="
+          },
+          "delegation": {
+            "denom": "iris-atto",
+            "amount": "100000000000000000000"
+          }
+        }
+      }
+    ],
+    "fee": {
+      "amount": null,
+      "gas": "50000"
+    },
+    "signatures": [
+      {
+        "pub_key": {
+          "type": "tendermint/PubKeySecp256k1",
+          "value": "A+8pfC8Rp5wvmUyMAkkqTmvpKQqWuyBQDbxKoUOmAI9V"
+        },
+        "signature": "9/B/q3T63aUub1Y6zF9H1bnTcWf/g0ht3pg2Nyz0B58CmowDWFryl8iMMF9HdsOpchBlMSM6AiJEwtfHYEcJnA==",
+        "account_number": "0",
+        "sequence": "0"
+      }
+    ],
+    "memo": "e665d18146625cac2b61be3e1fd4a4593bb88388@35.198.131.158:26656"
+  }
+}
