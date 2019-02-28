@@ -1,5 +1,5 @@
 {
-    "genesis_time":"2019-03-01T13:30:00.000000000Z",
+    "genesis_time":"2019-03-01T05:30:00.000000000Z",
     "chain_id":"irishub",
     "consensus_params":{
         "block_size":{
