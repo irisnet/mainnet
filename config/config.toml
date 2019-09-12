@@ -117,8 +117,7 @@ external_address = ""
 seeds = "6a6de770deaa4b8c061dffd82e9c7f4d40c2165d@seed-1.mainnet.irisnet.org:26656,a17d7923293203c64ba75723db4d5f28e642f469@seed-2.mainnet.irisnet.org:26656"
 
 # Comma separated list of nodes to keep persistent connections to
-persistent_peers = "2153d5d6d9394dc4c7959f061b67238d81154bdb@92.222.78.22:26656,d464628c078cdf0009d850241fdc448d3e15f5f1@irissentry01.dokia.cloud:26656,cbcde5471e7bb951bb41bcdca414888ae5e05ceb@electra.iris.forbole.com:26656,ed2648afa98d52ceba1429b6c6341f19f3aeec7a@18.196.245.160:26656
-,d5a4b5a1494631f3bcf1f4ae6cc3c60fe356c717@173.249.60.154:26656"
+persistent_peers = "2153d5d6d9394dc4c7959f061b67238d81154bdb@92.222.78.22:26656,d464628c078cdf0009d850241fdc448d3e15f5f1@irissentry01.dokia.cloud:26656,cbcde5471e7bb951bb41bcdca414888ae5e05ceb@electra.iris.forbole.com:26656,ed2648afa98d52ceba1429b6c6341f19f3aeec7a@18.196.245.160:26656,d5a4b5a1494631f3bcf1f4ae6cc3c60fe356c717@173.249.60.154:26656"
 
 # UPNP port forwarding
 upnp = false
@@ -240,7 +239,7 @@ index_all_tags = false
 # When true, Prometheus metrics are served under /metrics on
 # PrometheusListenAddr.
 # Check out the documentation for the list of available metrics.
-prometheus = true
+prometheus = false
 
 # Address to listen for Prometheus collector(s) connections
 prometheus_listen_addr = ":26660"
