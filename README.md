@@ -1,2 +1,2 @@
-# betanet
-Configuration files for the Betanet
+# mainnet
+Configuration files for the Mainnet
