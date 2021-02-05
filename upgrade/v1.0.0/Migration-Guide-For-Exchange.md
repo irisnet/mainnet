@@ -18,17 +18,15 @@ IRIS Hub v1.0 will be an **incompatible** upgrade including many important featu
 
 ## 2. IRIS Hub v1.0 Incompatibility
 
-As the earliest mainnet in Cosmos ecosystem, IRIS Hub has been using an old fork of Cosmos SDK v0.28.
+As the earliest mainnet in the Cosmos ecosystem, IRIS Hub has been using an old fork of Cosmos SDK v0.28. To adopt the revolutionary **IBC protocol**, IRIS Hub v1.0 has to migrate to the latest Cosmos SDK v0.41 which contains lots of features that are incompatible with v0.28. 
 
-Cosmos SDK v0.41 adds lots of features which are incompatible with v0.28. To adopt the revolutionary **IBC protocol**, IRIS Hub v1.0 has to migrate to the latest Cosmos SDK which is incompatible with the current IRIS Hub mainnet.
-
-The incompatibility of the upcoming upgrade mainly shows in the following 3 aspects:
-- **API**: Incompatible changes introduced by the latest Cosmos SDK v0.41, compared to v0.28
+The incompatibility of the upcoming upgrade mainly shows in the following aspects:
 - **Token unit and precision**: It is extremely important to note that Cosmos SDK has a built-in precision of 6 decimal places, the most important change in IRIS Hub v1.0 compared to the current mainnet is:
    - The precision of IRIS token has changed from 18 digits to **6** digits (same as ATOM now)
    - The smallest unit of IRIS token has changed from iris-atto to **uiris**
    - **1 iris = 10<sup>6</sup> uiris** after the upgrade
 - **Chain ID**: Because this upgrade will be a hard-fork upgrade, the chain-id will change from `irishub` to **`irishub-1`**
+- **API**: Incompatible changes introduced by the latest Cosmos SDK v0.41, compared to v0.28
 
 ## 3. API and SDKs
 ### 3.1. Cosmos SDK v0.41 API
