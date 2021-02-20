@@ -3,7 +3,7 @@
 ## 1. IRIS Hub v1.0 as a Significant Milestone
 IRIS Hub v1.0 will be an **incompatible** upgrade including many important features: it has integrated Cosmos Stargate's IBC functions (Cosmos SDK v0.41 and Tendermint v0.34) as well as upgraded many features unique to IRISnet, such as iService, Coinswap (AMM), NFT, Oracle, etc.
 
-- New features brought by [Cosmos SDK v0.41](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.0) and [Tendermint v0.34](https://github.com/tendermint/tendermint/blob/v0.34.3/CHANGELOG.md#v0.34.3)
+- New features brought by [Cosmos SDK v0.41](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.3) and [Tendermint v0.34](https://github.com/tendermint/tendermint/blob/v0.34.7/CHANGELOG.md#v0.34.7)
   - [Inter-Blockchain Communication (IBC)– cross-chain transactions](https://figment.network/resources/cosmos-stargate-upgrade-overview/#ibc)
   - [Protobuf Migration – blockchain performance & dev acceleration](https://figment.network/resources/cosmos-stargate-upgrade-overview/#proto)
   - [State Sync – minutes to sync new nodes](https://figment.network/resources/cosmos-stargate-upgrade-overview/#sync)
