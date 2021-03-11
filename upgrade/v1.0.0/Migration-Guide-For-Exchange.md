@@ -1,9 +1,9 @@
 # Migration Guide for Exchange Applications
 
 ## 1. IRIS Hub v1.0 as a Significant Milestone
-IRIS Hub v1.0 will be an **incompatible** upgrade including many important features: it will merge the IBC-integrated Cosmos Stargate's latest version (Cosmos SDK v0.40.0 and Tendermint v0.34) and will also integrate and upgrade many unique features of IRISnet e.g. Coinswap(AMM), NFT, iService v2, oracle, etc.
+IRIS Hub v1.0 will be an **incompatible** upgrade including many important features: it has integrated Cosmos Stargate's IBC functions (Cosmos SDK v0.41 and Tendermint v0.34) as well as upgraded many features unique to IRISnet, such as iService, Coinswap (AMM), NFT, Oracle, etc.
 
-- New features brought by [Cosmos SDK v0.40](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.40.0) and [Tendermint v0.34](https://github.com/tendermint/tendermint/blob/v0.34.0/UPGRADING.md)
+- New features brought by [Cosmos SDK v0.41](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.3) and [Tendermint v0.34](https://github.com/tendermint/tendermint/blob/v0.34.7/CHANGELOG.md#v0.34.7)
   - [Inter-Blockchain Communication (IBC)– cross-chain transactions](https://figment.network/resources/cosmos-stargate-upgrade-overview/#ibc)
   - [Protobuf Migration – blockchain performance & dev acceleration](https://figment.network/resources/cosmos-stargate-upgrade-overview/#proto)
   - [State Sync – minutes to sync new nodes](https://figment.network/resources/cosmos-stargate-upgrade-overview/#sync)
@@ -11,57 +11,55 @@ IRIS Hub v1.0 will be an **incompatible** upgrade including many important featu
   - [Chain Upgrade Module – upgrade automation](https://figment.network/resources/cosmos-stargate-upgrade-overview/#upgrade)
 
 - IRISnet's unique features:
+   - [Enhanced iService](https://bifrost.irisnet.org/docs/features/service.html): Interchain Service module which is refactored and optimized
    - [Coinswap](https://bifrost.irisnet.org/docs/features/coinswap.html): is the AMM (automated market maker) module implementing the protocol similar to Uniswap on IRIS Hub
    - [NFT](https://bifrost.irisnet.org/docs/features/nft.html): Non-fungible Token module supporting assets to be tokenized
-   - [iService v2](https://bifrost.irisnet.org/docs/features/service.html): Interchain Service module which is refactored and optimized
-   - [oracle](https://bifrost.irisnet.org/docs/features/oracle.html): oracle module based on the upgraded iService module to implement the oracle feature that can provide decentralized off-chain data onto IRIS Hub
+   - [Oracle](https://bifrost.irisnet.org/docs/features/oracle.html): oracle module based on the upgraded iService module to implement the oracle feature that can provide decentralized off-chain data onto IRIS Hub
 
-## 2. The instruction of IRISnet v1.0's incompatibility
+## 2. IRIS Hub v1.0 Incompatibility
 
-As one of the earliest mainnet in Cosmos ecosystem, IRISnet have used a very early version of Cosmos SDK which is v0.28.
+As the earliest mainnet in the Cosmos ecosystem, IRIS Hub has been using an old fork of Cosmos SDK v0.28. To adopt the revolutionary **IBC protocol**, IRIS Hub v1.0 has to migrate to the latest Cosmos SDK v0.41 which contains lots of features that are incompatible with v0.28. 
 
-Cosmos-SDK v0.40 adds lots of features which are incompatible with v0.2x. To integrate the revolutionary **IBC protocol**, IRIS Hub v1.0 must use Cosmos-SDK v0.40 which is incompatible with the current IRISnet mainnet.
-
-The incompatibility of the upcoming upgrade mainly shows in the following 3 aspects:
-- **API**: Cosmos-SDK v0.40 will lead to a relatively big incompatible upgrade of API comparing with Cosmos-SDK v0.28 (current IRISnet mainnet depends on)
-- **Token unit and precision**: It is important to note that since the built-in Cosmos-SDK v0.40 has a precision of 6 decimal places, the most important change in IRISnet v1.0 compared to the current mainnet is:
-   - The precision of IRIS token is changed from 18 digits to 6 digits
-   - The smallest unit of IRIS token is changed to **uiris**
+The incompatibility of the upcoming upgrade mainly shows in the following aspects:
+- **Token unit and precision**: It is extremely important to note that Cosmos SDK has a built-in precision of 6 decimal places, the most important change in IRIS Hub v1.0 compared to the current mainnet is:
+   - The precision of IRIS token has changed from 18 digits to **6** digits (same as ATOM now)
+   - The smallest unit of IRIS token has changed from iris-atto to **uiris**
    - **1 iris = 10<sup>6</sup> uiris** after the upgrade
-- **chainid**: Because this upgrade will be a non-smooth upgrade, the chainid of the upgraded IRISnet mainnet will be updated to `irishub-1`
+- **Chain ID**: Because this upgrade will be a hard-fork upgrade, the chain-id will change from `irishub` to **`irishub-1`**
+- **API**: Incompatible changes introduced by the latest Cosmos SDK v0.41, compared to v0.28
 
 ## 3. API and SDKs
-### 3.1. Cosmos-SDK v0.40 API
-Almost all IRISnet functions used by exchanges come from Cosmos-SDK; the new IRISnet v1.0 mainnet will provide APIs that are exactly the same as Cosmos-SDK v0.40:
+### 3.1. Cosmos SDK v0.41 API
+Almost all IRIS Hub functions used by exchanges come from Cosmos SDK; the new IRIS Hub v1.0 mainnet will provide APIs that are exactly the same as Cosmos SDK v0.41:
 
 - Cosmos Legacy JSON REST API
-   - Amino JSON encoding compatible with Cosmos-SDK v0.3x
+   - Amino JSON encoding compatible with Cosmos SDK v0.3x
    - Marked as Deprecated and will not be supported after v0.41 (expected to be about 1 year)
 - gRPC protocol (recommended for new users)
    - gRPC Server: Supporting gRPC interactive protocol and using native ProtocolBuffer encoding for data
    - gRPC Gateway: automatically map the gRPC query interface to the new JSON REST interface
    - Supported by a large number of third-party tools
 
-### 3.2. IRISnet's Multi-language SDKs (recommended for new users)
-IRISnet SDKs provide application-level packaging for the Cosmos-SDK API additionally, which enhances usability and compatibility:
-- Encapsulating the implementation details of transaction construction/signature/broadcast
-- Providing application-oriented API which is not depends on the data structure on the chain
+### 3.2. Multi-language Client SDKs (recommended for new users)
+These SDKs provide application-level abstraction of the Cosmos SDK API, enhancing usability and compatibility:
+- Encapsulating the implementation details of transaction construction/signing/broadcasting
+- Providing application-oriented API which does not depend on the on-chain data structures
 - Built-in private key import and management functions
 
 ## 4. Recommended Exchange Migration Path
 ### 4.1. The Fastest Migration Path
-Cosmos-SDK v0.40 retains the Legacy JSON REST API that is mostly compatible with v0.3x. If you want to minimize the amount of code modification, the exchange can use the integration method adopted in the listing of other mainnets based on Cosmos-SDK v0.3x or v0.40 (such as: Cosmos Hub) to the new mainnet of IRISnet v1.0.
+Cosmos SDK v0.41 retains the Legacy JSON REST API that is _mostly_ (not completely) compatible with v0.3x. If you want to minimize the amount of code modification, you can use the same method of integrating other Cosmos SDK 0.41 based mainnets (e.g., `cosmoshub-4`).
 
-**Disadvantages**: It is expected that when the Cosmos-SDK no longer supports the Legacy API in one year, the exchange will have to migrate the code again.
+**Disadvantages**: When Cosmos SDK completely deprecates the Legacy API, in about a year, you will have to migrate your code again.
 
 ### 4.2. Recommended Migration Path
-If you want to migrate once for all, it is recommended to develop your own client code based on IRISnet multi-language SDKs or the gRPC protocol.
+If you want to migrate once for all, it is recommended that you develop your own client code based on the gRPC protocol or by using multi-language client SDKs provided by IRISnet.
 
 ## 5. Migration Instruction
 ### 5.1. Using Cosmos Legacy JSON REST
-#### 5.1.1. Sending transactions onto the chain (take transfer as an example)
+#### 5.1.1. Sending transactions to the chain (take transfer as an example)
 ##### 5.1.1.1. Constructing a transaction
-The same code as integrating with cosmoshub-3 mainnet. The transaction structure is as follows:
+The same code as integrating with cosmoshub-4 mainnet. The transaction structure is as follows:
 
 ```json
   {
@@ -97,7 +95,7 @@ The same code as integrating with cosmoshub-3 mainnet. The transaction structure
   }
 ```
 
-where the IRISHub address prefix uses `iaa1` instead, which affects the fields:
+where the IRIS Hub address prefix uses `iaa1` instead, which affects the fields:
 - value.msg.value.from_adress
 - value.msg.value.to_address
 
@@ -106,7 +104,7 @@ Denom uses `uiris` instead (1iris = 10<sup>6</sup>uiris), which affects fields:
 - value.fee.amount.denom
 
 ##### 5.1.1.2. Signing a transaction
-The same code as integrating with cosmoshub-3 mainnet. Step 1: Constructing a signature data
+The same code as integrating with cosmoshub-4 mainnet. Step 1: Constructing a signature data
 ```json
  {
    "account_number": "0",
@@ -140,7 +138,7 @@ The same code as integrating with cosmoshub-3 mainnet. Step 1: Constructing a si
  }
 ```
 
-Step 2: Use the private key to sign the to-be-signed data, which is the same with the current IRISHub mainnet (note: the to-be-signed data needs to be compressed in JSON compact mode and sorted)
+Step 2: Use the private key to sign the to-be-signed data, which is the same with the current IRIS Hub mainnet (note: the to-be-signed data needs to be compressed in JSON compact mode and sorted)
 
 Step 3: Assemble the public key and the signature into the transaction body. The structure is as follows:
 
@@ -186,7 +184,7 @@ Step 3: Assemble the public key and the signature into the transaction body. The
  }
 ```
 ##### 5.1.1.3. Broadcasting a transaction
-The same code as integrating with cosmoshub-3 mainnet, call `POST /txs` to send a transaction, as the example below:
+The same code as integrating with cosmoshub-4 mainnet, call `POST /txs` to send a transaction, as the example below:
 
 ```bash
 curl -X POST "http://localhost:1317/txs" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"tx\": {\"msg\":[{\"type\":\"cosmos-sdk/MsgSend\",\"value\":{\"from_address\":\"iaa1rkgdpj6fyyyu7pnhmc3v7gw9uls4mnajvzdwkt\",\"to_address\":\"iaa1q6t5439f0rkvkzl38m0f43e0kpv3mx7x2shlq8\",\"amount\":[{\"denom\":\"uiris\",\"amount\":\"1000000\"}]}}],\"fee\":{\"amount\":[{\"denom\":\"uiris\",\"amount\":\"30000\"}],\"gas\":\"200000\"},\"signatures\":[{\"pub_key\":{\"type\":\"tendermint/PubKeySecp256k1\",\"value\":\"AxGagdsRTKni/h1+vCFzTpNltwoiU7SwIR2dg6Jl5a//\"},\"signature\":\"Pu8yiRVO8oB2YDDHyB047dXNArbVImasmKBrm8Kr+6B08y8QQ7YG1eVgHi5OIYYclccCf3Ju/BQ78qsMWMniNQ==\"}],\"memo\":\"Sent via irishub client\"}, \"mode\": \"block\"}"
@@ -259,7 +257,7 @@ curl -X POST "http://localhost:1317/txs" -H "accept: application/json" -H "Conte
   }
 ```
 ##### 5.1.2.2. Process the transfer transactions included in the block
-Step 1: Analyze tx from the block information obtained in [5.1.2.1. Query and parse the latest block information](#5121-Query-and-parse-the-latest-block-information), and decode it in base64
+Step 1: Analyze tx from the block information obtained in [5.1.2.1. Query and parse the latest block information](#5121-Query-and-parse-the-latest-block-information), and decode it from base64
 
 Step 2: Use SHA256 to hash the decoded result to get txhash
 
@@ -269,7 +267,7 @@ txbytes, _ := base64.StdEncoding.DecodeString(tx)
 txhash := sha256.Sum256(txbytes)
 ```
 
-Step 3: Use the txhash to query the corresponding tx information (**Note: There are two types of transfer messages in IRISHub, `cosmos-sdk/MsgSend` and `cosmos-sdk/MsgMultiSend`**)
+Step 3: Use the txhash to query the corresponding tx information (**Note: There are two types of transfer messages supported by Cosmos SDK, `cosmos-sdk/MsgSend` and `cosmos-sdk/MsgMultiSend`**)
 
  ```json
   {
@@ -493,7 +491,7 @@ Method 2: using `cosmos-sdk/MsgSend`, refer to [5.1.1. Sending transactions onto
 
     - Specific changes:
 
-      - These two interfaces have been cancelled
+      - These two interfaces have been removed
       - Tendermint RPC's block_results interface can be directly called to obtain relevant data (key and value in the events field of the query result are all base64 encoded)
 
     - json example:
@@ -872,9 +870,9 @@ Method 2: using `cosmos-sdk/MsgSend`, refer to [5.1.1. Sending transactions onto
 
     - Specific changes:
 
-      - This interface has been cancelled
-      - The coins field in the original interface can be queried through the /bank/balances/{address} interface
-      - Other fields in the original interface can be queried through the /auth/accounts/{address} interface
+      - This interface has been removed
+      - The coins field in the original interface can be queried through the `/bank/balances/{address}` interface
+      - Other fields in the original interface can be queried through the `/auth/accounts/{address}` interface
 
     - json example:
       ```json
