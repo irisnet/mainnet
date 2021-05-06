@@ -23,7 +23,7 @@ fdc0406afdd3acc63f74f5439e09104f663a7c1f@44.241.177.178:26656
 ebfb43ca1b592b5f8a1faf3e2aa1a34e8e1099cc@iris01.dokia.cloud:26656
 
 ### IRISnet (seed)
-a17d7923293203c64ba75723db4d5f28e642f469@seed-2.mainnet.irisnet.org:26656
+363430f2533f0b284c156e846b6934bb7e09ea82@seed-2.mainnet.irisnet.org:26656
 
 ### justin sun (go figure)
 fbaf634a899c7aab3c159ce1a345122bbeca3717@209.133.200.154:26656
