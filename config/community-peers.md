@@ -1,7 +1,7 @@
 
 ## Peer list for irishub-1 (25 Feb 2021)
 
-### script for validating node availability
+### Script for validating node availability
 ```bash
 curl -s https://raw.githubusercontent.com/irisnet/mainnet/master/config/community-peers.md | grep '@' | cut -d'@' -f2 | sed 's/:/ /' | xargs -n2 nc -zvw5 2>&1 | grep open
 ```
