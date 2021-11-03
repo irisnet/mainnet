@@ -3,7 +3,7 @@
 
 ### Script for validating node availability
 ```bash
-curl -s https://raw.githubusercontent.com/irisnet/mainnet/master/config/community-peers.md | grep '@' | cut -d'@' -f2 | sed 's/:/ /' | xargs -n2 nc -zvw5 2>&1 | grep open
+curl -s https://raw.githubusercontent.com/irisnet/mainnet/master/config/community-peers.md | grep '@' | grep -v 'raw.githubusercontent.com' | cut -d'@' -f2 | sed 's/:/ /' | xargs -n2 nc -zvw5 2>&1 | grep open
 ```
 
 ### Cosmostation (not seed) open
